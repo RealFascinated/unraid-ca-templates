@@ -9,7 +9,7 @@
   <Privileged>false</Privileged>
   <Support/>
   <Project>https://git.fascinated.cc/Fascinated/sharex-php-uploader</Project>
-  <Overview>This server allows you to easily upload ShareX screenshots to your website. It includes token authentication for security and can handle various image file types by converting them to WebP format for efficient storage.&#xD;
+  <Overview>This server allows you to easily upload ShareX screenshots and videos. It includes token authentication for security and can handle various image file types by converting them to WebP format for efficient storage.&#xD;
 &#xD;
 View the Git page: https://git.fascinated.cc/Fascinated/sharex-php-uploader</Overview>
   <Category>Cloud: Status:Stable</Category>
