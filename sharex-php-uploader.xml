@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>CDN</Name>
+  <Name>ShareX Uploader</Name>
   <Repository>fascinated/sharex-php-uploader:latest</Repository>
   <Registry/>
   <Network>bridge</Network>
