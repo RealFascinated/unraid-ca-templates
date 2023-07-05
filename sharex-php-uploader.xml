@@ -2,7 +2,7 @@
 <Container version="2">
   <Name>ShareX Uploader</Name>
   <Repository>fascinated/sharex-php-uploader:latest</Repository>
-  <Registry>https://hub.docker.com/r/fascinated/sharex-php-uploader<Registry/>
+  <Registry>https://hub.docker.com/r/fascinated/sharex-php-uploader</Registry>
   <Network>bridge</Network>
   <MyIP/>
   <Shell>bash</Shell>
