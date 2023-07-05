@@ -5,7 +5,7 @@
   <Registry/>
   <Network>bridge</Network>
   <MyIP/>
-  <Shell>sh</Shell>
+  <Shell>bash</Shell>
   <Privileged>false</Privileged>
   <Support/>
   <Project>https://git.fascinated.cc/Fascinated/sharex-php-uploader</Project>
@@ -22,9 +22,21 @@ View the Git page: https://git.fascinated.cc/Fascinated/sharex-php-uploader</Ove
   <DateInstalled>1688492530</DateInstalled>
   <DonateText/>
   <DonateLink/>
-  <Requires>ShareX</Requires>
+  <Requires>ShareX (For Windows), Sharenix (For Linux)</Requires>
+
+  <!-- Other Vars -->
   <Config Name="FILES_LOCATION" Target="/var/www/html" Default="" Mode="rw" Description="Where you want the uploaded files to be stored." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/Storage/CDN</Config>
   <Config Name="Max Upload Size" Target="MAX_UPLOAD_SIZE" Default="" Mode="" Description="The max upload size of files in megabytes. Eg: 500M" Type="Variable" Display="always" Required="true" Mask="false">500M</Config>
+  
+  <!-- PHP Script Vars -->
   <Config Name="Upload Secrets" Target="UPLOAD_SECRETS" Default="" Mode="" Description="You can add multiple secrets. Format: secret1,secret2,secret3" Type="Variable" Display="always" Required="true" Mask="false">set me</Config>
+  <Config Name="Upload Directory" Target="UPLOAD_DIR" Default="" Mode="" Description="The upload directory (If you don't know what this is, ignore it)" Type="Variable" Display="always" Required="true" Mask="false">./</Config>
+  <Config Name="Use Random File Names" Target="USE_RANDOM_FILE_NAMES" Default="" Mode="" Description="Use random file names instead of the original file name." Type="Variable" Display="always" Required="true" Mask="false">true</Config>
+  <Config Name="Should Convert to Webp" Target="SHOULD_CONVERT_TO_WEBP" Default="" Mode="" Description="Should the script convert images to webp?" Type="Variable" Display="always" Required="true" Mask="false">true</Config>
+  <Config Name="Webp Quality" Target="WEBP_QUALITY" Default="" Mode="" Description="The quality of the webp image (0-100)" Type="Variable" Display="always" Required="true" Mask="false">95</Config>
+  <Config Name="Webp Threadhold" Target="WEBP_THREADHOLD" Default="" Mode="" Description="The minimum file size for converting to webp (in bytes)" Type="Variable" Display="always" Required="true" Mask="false">1048576</Config>
+  <Config Name="File Name Length" Target="FILE_NAME_LENGTH" Default="" Mode="" Description="The length of the random file name" Type="Variable" Display="always" Required="true" Mask="false">8</Config>
+
+  <!-- Ports -->
   <Config Name="Server Port" Target="80" Default="" Mode="tcp" Description="The port to connect to the application on." Type="Port" Display="always" Required="true" Mask="false">8087</Config>
 </Container>
