@@ -24,6 +24,7 @@ View the Git page: https://git.fascinated.cc/Fascinated/sharex-php-uploader</Ove
   <DonateLink/>
   <Requires>ShareX</Requires>
   <Config Name="FILES_LOCATION" Target="/var/www/html" Default="" Mode="rw" Description="Where you want the uploaded files to be stored." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/Storage/CDN</Config>
-  <Config Name="Host Key 1" Target="MAX_UPLOAD_SIZE" Default="" Mode="" Description="The max upload size of files in megabytes. Eg: 500M" Type="Variable" Display="always" Required="true" Mask="false">500M</Config>
-  <Config Name="Host Port 1" Target="80" Default="" Mode="tcp" Description="The port to connect to the application on." Type="Port" Display="always" Required="true" Mask="false">8087</Config>
+  <Config Name="Max Upload Size" Target="MAX_UPLOAD_SIZE" Default="" Mode="" Description="The max upload size of files in megabytes. Eg: 500M" Type="Variable" Display="always" Required="true" Mask="false">500M</Config>
+  <Config Name="Upload Secrets" Target="UPLOAD_SECRETS" Default="" Mode="" Description="You can add multiple secrets. Format: secret1,secret2,secret3" Type="Variable" Display="always" Required="true" Mask="false">set me</Config>
+  <Config Name="Server Port" Target="80" Default="" Mode="tcp" Description="The port to connect to the application on." Type="Port" Display="always" Required="true" Mask="false">8087</Config>
 </Container>
