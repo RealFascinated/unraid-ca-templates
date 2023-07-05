@@ -34,7 +34,7 @@ View the Git page: https://git.fascinated.cc/Fascinated/sharex-php-uploader</Ove
   <Config Name="Use Random File Names" Target="USE_RANDOM_FILE_NAMES" Default="" Mode="" Description="Use random file names instead of the original file name." Type="Variable" Display="always" Required="true" Mask="false">true</Config>
   <Config Name="Random File Name Length" Target="FILE_NAME_LENGTH" Default="" Mode="" Description="The length of the random file name" Type="Variable" Display="always" Required="true" Mask="false">8</Config>
   <Config Name="Should Convert to Webp" Target="SHOULD_CONVERT_TO_WEBP" Default="" Mode="" Description="Should the script convert images to webp?" Type="Variable" Display="always" Required="true" Mask="false">true</Config>
-  <Config Name="Webp Quality" Target="WEBP_QUALITY" Default="" Mode="" Description="The quality of the webp image (0-100)" Type="Variable" Display="always" Required="true" Mask="false">95</Config>
+  <Config Name="Webp Quality" Target="WEBP_QUALITY" Default="" Mode="" Description="The quality of the webp image (0-100 - higher is better)" Type="Variable" Display="always" Required="true" Mask="false">95</Config>
   <Config Name="Webp Threadhold" Target="WEBP_THREADHOLD" Default="" Mode="" Description="The minimum file size for converting to webp (in bytes)" Type="Variable" Display="always" Required="true" Mask="false">1048576</Config>
 
   <!-- Ports -->
