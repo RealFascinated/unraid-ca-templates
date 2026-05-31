@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>monitor-agent</Name>
+  <Repository>ghcr.io/realfascinated/monitor-agent:latest</Repository>
+  <Registry>https://ghcr.io/</Registry>
+  <Network>host</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>true</Privileged>
+  <Support>https://github.com/RealFascinated/Monitor-Agent/issues</Support>
+  <Project>https://github.com/RealFascinated/Monitor-Agent</Project>
+  <Overview>Monitor Agent pushes host metrics (CPU, memory, network, array disks, ZFS pools, and Docker containers) to your Monitor dashboard.&#xD;&#xD;Requires an ingest token from https://monitor.fascinated.cc&#xD;&#xD;This template runs with host networking, privileged mode, and host /proc mounts so metrics reflect your Unraid server—not only the container. Array shares under /mnt/*, ZFS, and Docker stats are supported when left at the default volume mappings.</Overview>
+  <Category>Tools:System</Category>
+  <WebUI>https://monitor.fascinated.cc</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/RealFascinated/Monitor-Agent/master/unraid/monitor-agent.xml</TemplateURL>
+  <Icon>https://monitor.fascinated.cc/apple-touch-icon.png</Icon>
+  <ExtraParams>--pid=host</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled/>
+  <DonateText/>
+  <DonateLink/>
+  <Requires>Monitor ingest token. Docker must be enabled on the host for container metrics.</Requires>
+  <Config Name="Ingest Token" Target="MONITOR_INGEST_TOKEN" Default="" Mode="" Description="Ingest token from your Monitor server settings (required)." Type="Variable" Display="always" Required="true" Mask="true"/>
+  <Config Name="API Endpoint" Target="MONITOR_API_ENDPOINT" Default="https://monitor.fascinated.cc/api/v1/servers/ingest" Mode="" Description="Monitor ingest API URL." Type="Variable" Display="always" Required="false" Mask="false">https://monitor.fascinated.cc/api/v1/servers/ingest</Config>
+  <Config Name="Push Schedule" Target="MONITOR_PUSH_SCHEDULE" Default="*/15 * * * * *" Mode="" Description="Cron schedule with seconds field (default: every 15 seconds)." Type="Variable" Display="advanced" Required="false" Mask="false">*/15 * * * * *</Config>
+  <Config Name="Enable Docker Stats" Target="MONITOR_ENABLE_DOCKER" Default="true" Mode="" Description="Collect per-container CPU and memory from the host Docker daemon." Type="Variable" Display="advanced" Required="false" Mask="false">true</Config>
+  <Config Name="Log Level" Target="MONITOR_LOG_LEVEL" Default="info" Mode="" Description="Agent log level: debug, info, warn, or error." Type="Variable" Display="advanced" Required="false" Mask="false">info</Config>
+  <Config Name="Timezone" Target="TZ" Default="" Mode="" Description="Timezone (e.g. America/New_York). Leave empty to use the Unraid system timezone." Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Config File" Target="MONITOR_CONFIG_FILE" Default="-" Mode="" Description="Set to - to configure via environment variables only." Type="Variable" Display="advanced-hide" Required="false" Mask="false">-</Config>
+  <Config Name="Host Root Prefix" Target="MONITOR_HOST_ROOT" Default="/host" Mode="" Description="Path prefix for host disk metrics (must match the Host Root volume target)." Type="Variable" Display="advanced-hide" Required="false" Mask="false">/host</Config>
+  <Config Name="Host Root" Target="/host" Default="/" Mode="ro" Description="Host filesystem (read-only) for disk usage on array shares and ZFS mount points." Type="Path" Display="advanced-hide" Required="true" Mask="false">/</Config>
+  <Config Name="Host /proc" Target="/proc" Default="/proc" Mode="ro" Description="Host procfs for CPU, memory, load, and network metrics." Type="Path" Display="advanced-hide" Required="true" Mask="false">/proc</Config>
+  <Config Name="Host /sys" Target="/sys" Default="/sys" Mode="ro" Description="Host sysfs." Type="Path" Display="advanced-hide" Required="true" Mask="false">/sys</Config>
+  <Config Name="Host /dev" Target="/dev" Default="/dev" Mode="ro" Description="Host devices for disk I/O and ZFS (zpool)." Type="Path" Display="advanced-hide" Required="true" Mask="false">/dev</Config>
+  <Config Name="Host OS Release" Target="/etc/os-release" Default="/etc/os-release" Mode="ro" Description="Host OS identification." Type="Path" Display="advanced-hide" Required="true" Mask="false">/etc/os-release</Config>
+  <Config Name="Docker Socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="Docker socket for container statistics." Type="Path" Display="advanced-hide" Required="true" Mask="false">/var/run/docker.sock</Config>
+</Container>
